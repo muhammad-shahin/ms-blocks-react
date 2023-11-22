@@ -1,0 +1,24 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "create-block/ms-blocks",
+	"version": "0.1.0",
+	"title": "Ms Blocks",
+	"category": "widgets",
+	"description": "Example block scaffolded with Create Block tool.",
+	"example": {},
+	"attributes": {
+		"text": {
+			"type": "string",
+			"default": "Hello Ji"
+		}
+	},
+	"supports": {
+		"html": false
+	},
+	"textdomain": "ms-blocks",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js"
+}
