@@ -6,19 +6,27 @@ import {
 } from "@wordpress/block-editor";
 import { PanelBody, TextControl } from "@wordpress/components";
 import "./editor.scss";
-import { useState, Fragment } from "@wordpress/element";
-const { Fragment } = wp.element;
+import { useState, Fragment, useEffect } from "@wordpress/element";
 
 export default function Edit({ attributes, setAttributes }) {
+	const { text, sliderInfo } = attributes;
 	const [currentSlide, setCurrentSlide] = useState(0);
-	const { text } = attributes;
-	console.log(text);
-	const handleTextChange = (value) => {
-		console.log(value);
+
+	// handle slider height change
+	const handleHeightChange = (value) => {
+		console.log("Slider Height Change :", value);
 		setAttributes({
-			text: value,
+			sliderInfo: { ...sliderInfo, height: value },
 		});
 	};
+	// handle slider Border Radius change
+	const handleBorderRadiusChange = (value) => {
+		console.log("Slider Border Radius Change :", value);
+		setAttributes({
+			sliderInfo: { ...sliderInfo, borderRadius: value },
+		});
+	};
+
 	const handleSlideChange = (slideNumber) => {
 		setCurrentSlide(slideNumber);
 	};
@@ -30,23 +38,46 @@ export default function Edit({ attributes, setAttributes }) {
 					initialOpen={true}
 				>
 					<TextControl
-						label={__("Slider Settings", "ms-blocks")}
-						placeholder="Here You can edit text"
-						onChange={(v) => handleTextChange(v)}
-						defaultValue={text}
+						label={__("Slider Height (px)", "ms-blocks")}
+						placeholder="Change Slider Height"
+						onChange={(v) => handleHeightChange(v)}
+						defaultValue={sliderInfo?.height}
+						type="number"
+					/>
+					<TextControl
+						label={__("Slider Border Radius (px)", "ms-blocks")}
+						placeholder="Change Slider Border Radius"
+						onChange={(v) => handleBorderRadiusChange(v)}
+						defaultValue={sliderInfo?.borderRadius}
+						type="number"
 					/>
 				</PanelBody>
 			</InspectorControls>
-			<div className="slider-container">
+			<div
+				className="slider-container"
+				style={{
+					height: `${sliderInfo?.height}px`,
+					borderRadius: `${sliderInfo?.borderRadius}px`,
+				}}
+			>
 				<div className="slider-wrapper">
 					<div
 						className="slider-content"
-						style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+						style={{
+							transform: `translateX(-${currentSlide * 100}%)`,
+							borderRadius: `${sliderInfo?.borderRadius}px`,
+						}}
 					>
-						<div className="slide">
-							<img src="https://i.ibb.co/4S1Pcj1/team-member-1.jpg" />
+						<div
+							className="slide"
+							style={{ borderRadius: `${sliderInfo?.borderRadius}px` }}
+						>
+							<img
+								style={{ borderRadius: `${sliderInfo?.borderRadius}px` }}
+								src="https://i.ibb.co/4S1Pcj1/team-member-1.jpg"
+							/>
 							{/* overlay effect on image */}
-							<div className="image-overlay"></div>
+							{/* <div className="image-overlay"></div> */}
 						</div>
 						<div className="slide">
 							<img src="https://i.ibb.co/sFnNv0t/team-member-2.jpg" />

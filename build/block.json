@@ -11,6 +11,13 @@
     "text": {
       "type": "string",
       "default": "Hello Ji"
+    },
+    "sliderInfo": {
+      "type": "object",
+      "default": {
+        "height": 500,
+        "borderRadius": 8
+      }
     }
   },
   "supports": {

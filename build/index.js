@@ -1,13 +1,120 @@
 /******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./src/edit.js":
 /*!*********************!*\
   !*** ./src/edit.js ***!
   \*********************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: C:\\Users\\Muhammad Shahin\\Local Sites\\gutenberg-block-development\\app\\public\\wp-content\\plugins\\ms-blocks\\src\\edit.js: Identifier 'Fragment' has already been declared. (10:8)\n\n\u001b[0m \u001b[90m  8 |\u001b[39m \u001b[36mimport\u001b[39m \u001b[32m\"./editor.scss\"\u001b[39m\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m  9 |\u001b[39m \u001b[36mimport\u001b[39m { useState\u001b[33m,\u001b[39m \u001b[33mFragment\u001b[39m } \u001b[36mfrom\u001b[39m \u001b[32m'@wordpress/element'\u001b[39m\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 10 |\u001b[39m \u001b[36mconst\u001b[39m { \u001b[33mFragment\u001b[39m } \u001b[33m=\u001b[39m wp\u001b[33m.\u001b[39melement\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 11 |\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 12 |\u001b[39m \u001b[36mexport\u001b[39m \u001b[36mdefault\u001b[39m \u001b[36mfunction\u001b[39m \u001b[33mEdit\u001b[39m({ attributes\u001b[33m,\u001b[39m setAttributes }) {\u001b[0m\n\u001b[0m \u001b[90m 13 |\u001b[39m \t\u001b[36mconst\u001b[39m [currentSlide\u001b[33m,\u001b[39m setCurrentSlide] \u001b[33m=\u001b[39m useState(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n    at constructor (C:\\Users\\Muhammad Shahin\\Local Sites\\gutenberg-block-development\\app\\public\\wp-content\\plugins\\ms-blocks\\node_modules\\@babel\\parser\\lib\\index.js:356:19)\n    at JSXParserMixin.raise (C:\\Users\\Muhammad Shahin\\Local Sites\\gutenberg-block-development\\app\\public\\wp-content\\plugins\\ms-blocks\\node_modules\\@babel\\parser\\lib\\index.js:3223:19)\n    at ScopeHandler.checkRedeclarationInScope (C:\\Users\\Muhammad Shahin\\Local Sites\\gutenberg-block-development\\app\\public\\wp-content\\plugins\\ms-blocks\\node_modules\\@babel\\parser\\lib\\index.js:1496:19)\n    at ScopeHandler.declareName (C:\\Users\\Muhammad Shahin\\Local Sites\\gutenberg-block-development\\app\\public\\wp-content\\plugins\\ms-blocks\\node_modules\\@babel\\parser\\lib\\index.js:1467:12)\n    at JSXParserMixin.declareNameFromIdentifier (C:\\Users\\Muhammad Shahin\\Local Sites\\gutenberg-block-development\\app\\public\\wp-content\\plugins\\ms-blocks\\node_modules\\@babel\\parser\\lib\\index.js:7484:16)\n    at JSXParserMixin.checkIdentifier (C:\\Users\\Muhammad Shahin\\Local Sites\\gutenberg-block-development\\app\\public\\wp-content\\plugins\\ms-blocks\\node_modules\\@babel\\parser\\lib\\index.js:7480:12)\n    at JSXParserMixin.checkLVal (C:\\Users\\Muhammad Shahin\\Local Sites\\gutenberg-block-development\\app\\public\\wp-content\\plugins\\ms-blocks\\node_modules\\@babel\\parser\\lib\\index.js:7419:12)\n    at JSXParserMixin.checkLVal (C:\\Users\\Muhammad Shahin\\Local Sites\\gutenberg-block-development\\app\\public\\wp-content\\plugins\\ms-blocks\\node_modules\\@babel\\parser\\lib\\index.js:7450:14)\n    at JSXParserMixin.checkLVal (C:\\Users\\Muhammad Shahin\\Local Sites\\gutenberg-block-development\\app\\public\\wp-content\\plugins\\ms-blocks\\node_modules\\@babel\\parser\\lib\\index.js:7450:14)\n    at JSXParserMixin.parseVarId (C:\\Users\\Muhammad Shahin\\Local Sites\\gutenberg-block-development\\app\\public\\wp-content\\plugins\\ms-blocks\\node_modules\\@babel\\parser\\lib\\index.js:13280:10)\n    at JSXParserMixin.parseVar (C:\\Users\\Muhammad Shahin\\Local Sites\\gutenberg-block-development\\app\\public\\wp-content\\plugins\\ms-blocks\\node_modules\\@babel\\parser\\lib\\index.js:13258:12)\n    at JSXParserMixin.parseVarStatement (C:\\Users\\Muhammad Shahin\\Local Sites\\gutenberg-block-development\\app\\public\\wp-content\\plugins\\ms-blocks\\node_modules\\@babel\\parser\\lib\\index.js:13100:10)\n    at JSXParserMixin.parseStatementContent (C:\\Users\\Muhammad Shahin\\Local Sites\\gutenberg-block-development\\app\\public\\wp-content\\plugins\\ms-blocks\\node_modules\\@babel\\parser\\lib\\index.js:12683:23)\n    at JSXParserMixin.parseStatementLike (C:\\Users\\Muhammad Shahin\\Local Sites\\gutenberg-block-development\\app\\public\\wp-content\\plugins\\ms-blocks\\node_modules\\@babel\\parser\\lib\\index.js:12588:17)\n    at JSXParserMixin.parseModuleItem (C:\\Users\\Muhammad Shahin\\Local Sites\\gutenberg-block-development\\app\\public\\wp-content\\plugins\\ms-blocks\\node_modules\\@babel\\parser\\lib\\index.js:12565:17)\n    at JSXParserMixin.parseBlockOrModuleBlockBody (C:\\Users\\Muhammad Shahin\\Local Sites\\gutenberg-block-development\\app\\public\\wp-content\\plugins\\ms-blocks\\node_modules\\@babel\\parser\\lib\\index.js:13189:36)\n    at JSXParserMixin.parseBlockBody (C:\\Users\\Muhammad Shahin\\Local Sites\\gutenberg-block-development\\app\\public\\wp-content\\plugins\\ms-blocks\\node_modules\\@babel\\parser\\lib\\index.js:13182:10)\n    at JSXParserMixin.parseProgram (C:\\Users\\Muhammad Shahin\\Local Sites\\gutenberg-block-development\\app\\public\\wp-content\\plugins\\ms-blocks\\node_modules\\@babel\\parser\\lib\\index.js:12464:10)\n    at JSXParserMixin.parseTopLevel (C:\\Users\\Muhammad Shahin\\Local Sites\\gutenberg-block-development\\app\\public\\wp-content\\plugins\\ms-blocks\\node_modules\\@babel\\parser\\lib\\index.js:12454:25)\n    at JSXParserMixin.parse (C:\\Users\\Muhammad Shahin\\Local Sites\\gutenberg-block-development\\app\\public\\wp-content\\plugins\\ms-blocks\\node_modules\\@babel\\parser\\lib\\index.js:14376:10)\n    at parse (C:\\Users\\Muhammad Shahin\\Local Sites\\gutenberg-block-development\\app\\public\\wp-content\\plugins\\ms-blocks\\node_modules\\@babel\\parser\\lib\\index.js:14417:38)\n    at parser (C:\\Users\\Muhammad Shahin\\Local Sites\\gutenberg-block-development\\app\\public\\wp-content\\plugins\\ms-blocks\\node_modules\\@babel\\core\\lib\\parser\\index.js:41:34)\n    at parser.next (<anonymous>)\n    at normalizeFile (C:\\Users\\Muhammad Shahin\\Local Sites\\gutenberg-block-development\\app\\public\\wp-content\\plugins\\ms-blocks\\node_modules\\@babel\\core\\lib\\transformation\\normalize-file.js:64:37)\n    at normalizeFile.next (<anonymous>)\n    at run (C:\\Users\\Muhammad Shahin\\Local Sites\\gutenberg-block-development\\app\\public\\wp-content\\plugins\\ms-blocks\\node_modules\\@babel\\core\\lib\\transformation\\index.js:21:50)\n    at run.next (<anonymous>)\n    at transform (C:\\Users\\Muhammad Shahin\\Local Sites\\gutenberg-block-development\\app\\public\\wp-content\\plugins\\ms-blocks\\node_modules\\@babel\\core\\lib\\transform.js:22:33)\n    at transform.next (<anonymous>)\n    at step (C:\\Users\\Muhammad Shahin\\Local Sites\\gutenberg-block-development\\app\\public\\wp-content\\plugins\\ms-blocks\\node_modules\\gensync\\index.js:261:32)\n    at C:\\Users\\Muhammad Shahin\\Local Sites\\gutenberg-block-development\\app\\public\\wp-content\\plugins\\ms-blocks\\node_modules\\gensync\\index.js:273:13\n    at async.call.result.err.err (C:\\Users\\Muhammad Shahin\\Local Sites\\gutenberg-block-development\\app\\public\\wp-content\\plugins\\ms-blocks\\node_modules\\gensync\\index.js:223:11)");
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Edit)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./editor.scss */ "./src/editor.scss");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__);
+
+
+
+
+
+
+function Edit({
+  attributes,
+  setAttributes
+}) {
+  const {
+    text,
+    sliderInfo
+  } = attributes;
+  const [currentSlide, setCurrentSlide] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_5__.useState)(0);
+
+  // handle slider height change
+  const handleHeightChange = value => {
+    console.log("Slider Height Change :", value);
+    setAttributes({
+      sliderInfo: {
+        ...sliderInfo,
+        height: value
+      }
+    });
+  };
+  // handle slider Border Radius change
+  const handleBorderRadiusChange = value => {
+    console.log("Slider Border Radius Change :", value);
+    setAttributes({
+      sliderInfo: {
+        ...sliderInfo,
+        borderRadius: value
+      }
+    });
+  };
+  const handleSlideChange = slideNumber => {
+    setCurrentSlide(slideNumber);
+  };
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Slider Settings", "ms-blocks"),
+    initialOpen: true
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Slider Height (px)", "ms-blocks"),
+    placeholder: "Change Slider Height",
+    onChange: v => handleHeightChange(v),
+    defaultValue: sliderInfo?.height,
+    type: "number"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Slider Border Radius (px)", "ms-blocks"),
+    placeholder: "Change Slider Border Radius",
+    onChange: v => handleBorderRadiusChange(v),
+    defaultValue: sliderInfo?.borderRadius,
+    type: "number"
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "slider-container",
+    style: {
+      height: `${sliderInfo?.height}px`,
+      borderRadius: `${sliderInfo?.borderRadius}px`
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "slider-wrapper"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "slider-content",
+    style: {
+      transform: `translateX(-${currentSlide * 100}%)`,
+      borderRadius: `${sliderInfo?.borderRadius}px`
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "slide",
+    style: {
+      borderRadius: `${sliderInfo?.borderRadius}px`
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+    style: {
+      borderRadius: `${sliderInfo?.borderRadius}px`
+    },
+    src: "https://i.ibb.co/4S1Pcj1/team-member-1.jpg"
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "slide"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+    src: "https://i.ibb.co/sFnNv0t/team-member-2.jpg"
+  })))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "slider-button-container"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
+    className: "slider-button",
+    onClick: () => handleSlideChange(0)
+  }, "1"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
+    className: "slider-button",
+    onClick: () => handleSlideChange(1)
+  }, "2"))));
+}
 
 /***/ }),
 
@@ -17,7 +124,6 @@ throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__);
@@ -48,7 +154,6 @@ __webpack_require__.r(__webpack_exports__);
   \*********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ save)
@@ -74,13 +179,24 @@ function save({
 
 /***/ }),
 
+/***/ "./src/editor.scss":
+/*!*************************!*\
+  !*** ./src/editor.scss ***!
+  \*************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "./src/style.scss":
 /*!************************!*\
   !*** ./src/style.scss ***!
   \************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
@@ -93,7 +209,6 @@ __webpack_require__.r(__webpack_exports__);
   \************************/
 /***/ ((module) => {
 
-"use strict";
 module.exports = window["React"];
 
 /***/ }),
@@ -104,7 +219,6 @@ module.exports = window["React"];
   \*************************************/
 /***/ ((module) => {
 
-"use strict";
 module.exports = window["wp"]["blockEditor"];
 
 /***/ }),
@@ -115,8 +229,37 @@ module.exports = window["wp"]["blockEditor"];
   \********************************/
 /***/ ((module) => {
 
-"use strict";
 module.exports = window["wp"]["blocks"];
+
+/***/ }),
+
+/***/ "@wordpress/components":
+/*!************************************!*\
+  !*** external ["wp","components"] ***!
+  \************************************/
+/***/ ((module) => {
+
+module.exports = window["wp"]["components"];
+
+/***/ }),
+
+/***/ "@wordpress/element":
+/*!*********************************!*\
+  !*** external ["wp","element"] ***!
+  \*********************************/
+/***/ ((module) => {
+
+module.exports = window["wp"]["element"];
+
+/***/ }),
+
+/***/ "@wordpress/i18n":
+/*!******************************!*\
+  !*** external ["wp","i18n"] ***!
+  \******************************/
+/***/ ((module) => {
+
+module.exports = window["wp"]["i18n"];
 
 /***/ }),
 
@@ -126,8 +269,7 @@ module.exports = window["wp"]["blocks"];
   \************************/
 /***/ ((module) => {
 
-"use strict";
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/ms-blocks","version":"0.1.0","title":"Ms Blocks","category":"widgets","description":"Example block scaffolded with Create Block tool.","example":{},"attributes":{"text":{"type":"string","default":"Hello Ji"}},"supports":{"html":false},"textdomain":"ms-blocks","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/ms-blocks","version":"0.1.0","title":"Ms Blocks","category":"widgets","description":"Example block scaffolded with Create Block tool.","example":{},"attributes":{"text":{"type":"string","default":"Hello Ji"},"sliderInfo":{"type":"object","default":{"height":500,"borderRadius":8}}},"supports":{"html":false},"textdomain":"ms-blocks","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
 
 /***/ })
 
