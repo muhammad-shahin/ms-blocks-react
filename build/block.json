@@ -16,7 +16,9 @@
       "type": "object",
       "default": {
         "height": 500,
-        "borderRadius": 8
+        "borderRadius": 8,
+        "overlayIntensity": 0,
+        "overlayColor": "#000"
       }
     }
   },

@@ -41,7 +41,6 @@ function Edit({
 
   // handle slider height change
   const handleHeightChange = value => {
-    console.log("Slider Height Change :", value);
     setAttributes({
       sliderInfo: {
         ...sliderInfo,
@@ -51,7 +50,6 @@ function Edit({
   };
   // handle slider Border Radius change
   const handleBorderRadiusChange = value => {
-    console.log("Slider Border Radius Change :", value);
     setAttributes({
       sliderInfo: {
         ...sliderInfo,
@@ -77,6 +75,31 @@ function Edit({
     onChange: v => handleBorderRadiusChange(v),
     defaultValue: sliderInfo?.borderRadius,
     type: "number"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Slider Overlay Intensity", "ms-blocks"),
+    placeholder: "Change Overlay Intensity",
+    onChange: v => setAttributes({
+      sliderInfo: {
+        ...sliderInfo,
+        overlayIntensity: v
+      }
+    }),
+    defaultValue: sliderInfo?.overlayIntensity,
+    type: "number",
+    min: "0.1",
+    max: "1",
+    step: "0.1"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", {
+    htmlFor: "colorPicker"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Overlay Color", "my-block")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ColorPicker, {
+    color: sliderInfo?.overlayColor,
+    onChangeComplete: newColor => setAttributes({
+      sliderInfo: {
+        ...sliderInfo,
+        overlayColor: newColor.hex
+      }
+    }),
+    id: "colorPicker"
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "slider-container",
     style: {
@@ -97,6 +120,12 @@ function Edit({
     className: "slide"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
     src: "https://i.ibb.co/4S1Pcj1/team-member-1.jpg"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "image-overlay",
+    style: {
+      opacity: `${sliderInfo?.overlayIntensity}`,
+      backgroundColor: `${sliderInfo?.overlayColor}`
+    }
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "slide"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
@@ -265,7 +294,7 @@ module.exports = window["wp"]["i18n"];
   \************************/
 /***/ ((module) => {
 
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/ms-blocks","version":"0.1.0","title":"Ms Blocks","category":"widgets","description":"Example block scaffolded with Create Block tool.","example":{},"attributes":{"text":{"type":"string","default":"Hello Ji"},"sliderInfo":{"type":"object","default":{"height":500,"borderRadius":8}}},"supports":{"html":false},"textdomain":"ms-blocks","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/ms-blocks","version":"0.1.0","title":"Ms Blocks","category":"widgets","description":"Example block scaffolded with Create Block tool.","example":{},"attributes":{"text":{"type":"string","default":"Hello Ji"},"sliderInfo":{"type":"object","default":{"height":500,"borderRadius":8,"overlayIntensity":0,"overlayColor":"#000"}}},"supports":{"html":false},"textdomain":"ms-blocks","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
 
 /***/ })
 

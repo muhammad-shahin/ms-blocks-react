@@ -4,7 +4,7 @@ import {
 	InspectorControls,
 	RichText,
 } from "@wordpress/block-editor";
-import { PanelBody, TextControl } from "@wordpress/components";
+import { PanelBody, TextControl, ColorPicker } from "@wordpress/components";
 import "./editor.scss";
 import { useState, Fragment, useEffect } from "@wordpress/element";
 
@@ -14,14 +14,12 @@ export default function Edit({ attributes, setAttributes }) {
 
 	// handle slider height change
 	const handleHeightChange = (value) => {
-		console.log("Slider Height Change :", value);
 		setAttributes({
 			sliderInfo: { ...sliderInfo, height: value },
 		});
 	};
 	// handle slider Border Radius change
 	const handleBorderRadiusChange = (value) => {
-		console.log("Slider Border Radius Change :", value);
 		setAttributes({
 			sliderInfo: { ...sliderInfo, borderRadius: value },
 		});
@@ -51,6 +49,30 @@ export default function Edit({ attributes, setAttributes }) {
 						defaultValue={sliderInfo?.borderRadius}
 						type="number"
 					/>
+					<TextControl
+						label={__("Slider Overlay Intensity", "ms-blocks")}
+						placeholder="Change Overlay Intensity"
+						onChange={(v) =>
+							setAttributes({
+								sliderInfo: { ...sliderInfo, overlayIntensity: v },
+							})
+						}
+						defaultValue={sliderInfo?.overlayIntensity}
+						type="number"
+						min="0.1"
+						max="1"
+						step="0.1"
+					/>
+					<label htmlFor="colorPicker">{__("Overlay Color", "my-block")}</label>
+					<ColorPicker
+						color={sliderInfo?.overlayColor}
+						onChangeComplete={(newColor) =>
+							setAttributes({
+								sliderInfo: { ...sliderInfo, overlayColor: newColor.hex },
+							})
+						}
+						id="colorPicker"
+					/>
 				</PanelBody>
 			</InspectorControls>
 			<div
@@ -73,7 +95,13 @@ export default function Edit({ attributes, setAttributes }) {
 						<div className="slide">
 							<img src="https://i.ibb.co/4S1Pcj1/team-member-1.jpg" />
 							{/* overlay effect on image */}
-							{/* <div className="image-overlay"></div> */}
+							<div
+								className="image-overlay"
+								style={{
+									opacity: `${sliderInfo?.overlayIntensity}`,
+									backgroundColor: `${sliderInfo?.overlayColor}`,
+								}}
+							></div>
 						</div>
 						<div className="slide">
 							<img src="https://i.ibb.co/sFnNv0t/team-member-2.jpg" />
