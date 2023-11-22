@@ -84,22 +84,18 @@ function Edit({
       borderRadius: `${sliderInfo?.borderRadius}px`
     }
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "slider-wrapper"
+    className: "slider-wrapper",
+    style: {
+      borderRadius: `${sliderInfo?.borderRadius}px`
+    }
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "slider-content",
     style: {
-      transform: `translateX(-${currentSlide * 100}%)`,
-      borderRadius: `${sliderInfo?.borderRadius}px`
+      transform: `translateX(-${currentSlide * 100}%)`
     }
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "slide",
-    style: {
-      borderRadius: `${sliderInfo?.borderRadius}px`
-    }
+    className: "slide"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
-    style: {
-      borderRadius: `${sliderInfo?.borderRadius}px`
-    },
     src: "https://i.ibb.co/4S1Pcj1/team-member-1.jpg"
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "slide"

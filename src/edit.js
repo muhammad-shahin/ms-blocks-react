@@ -60,22 +60,18 @@ export default function Edit({ attributes, setAttributes }) {
 					borderRadius: `${sliderInfo?.borderRadius}px`,
 				}}
 			>
-				<div className="slider-wrapper">
+				<div
+					className="slider-wrapper"
+					style={{ borderRadius: `${sliderInfo?.borderRadius}px` }}
+				>
 					<div
 						className="slider-content"
 						style={{
 							transform: `translateX(-${currentSlide * 100}%)`,
-							borderRadius: `${sliderInfo?.borderRadius}px`,
 						}}
 					>
-						<div
-							className="slide"
-							style={{ borderRadius: `${sliderInfo?.borderRadius}px` }}
-						>
-							<img
-								style={{ borderRadius: `${sliderInfo?.borderRadius}px` }}
-								src="https://i.ibb.co/4S1Pcj1/team-member-1.jpg"
-							/>
+						<div className="slide">
+							<img src="https://i.ibb.co/4S1Pcj1/team-member-1.jpg" />
 							{/* overlay effect on image */}
 							{/* <div className="image-overlay"></div> */}
 						</div>
