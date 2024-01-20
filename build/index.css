@@ -1,1 +1,43 @@
-.text-color{color:#fff}.slider-container{border:2px solid blue;display:flex;flex-direction:column;height:500px;position:relative;width:100%}.slider-wrapper{height:100%;overflow:hidden;width:100%}.slider-content{display:flex;transition:transform .3s ease-in-out;width:100%}.slide{min-width:100%;position:relative;width:100%}.image-overlay{background-color:#000;height:100%;left:0;opacity:.6;position:absolute;top:0;width:100%}img{-o-object-fit:cover;object-fit:cover;width:100%}.slider-button-container{left:50%;position:absolute;top:50px;transform:translateX(-50%)}.slider-button{background-color:red;border-radius:100px;height:50px;width:50px;z-index:1000}label{color:#1e1e1e;display:block;font-size:11px;font-weight:500;margin:8px 0;text-transform:uppercase}
+/*!****************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/editor.scss ***!
+  \****************************************************************************************************************************************************************************************************************************************/
+.slider-container {
+  position: relative;
+  width: 100%;
+  min-height: 60vh;
+  overflow: hidden;
+}
+
+.slider {
+  display: flex;
+  transition: all 0.3s linear;
+}
+
+.slide {
+  min-width: 100%;
+}
+.slide img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.slider-buttons-container {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.slider-buttons-container button {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: crimson;
+  color: white;
+  padding: 8px;
+}
+
+/*# sourceMappingURL=index.css.map*/

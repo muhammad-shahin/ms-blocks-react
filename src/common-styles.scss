@@ -1,0 +1,34 @@
+.slider-container {
+	position: relative;
+	width: 100%;
+	min-height: 60vh;
+	overflow: hidden;
+}
+.slider {
+	display: flex;
+	transition: all 0.3s linear;
+}
+.slide {
+	min-width: 100%;
+	img {
+		object-fit: cover;
+	}
+}
+.slider-buttons-container {
+	position: absolute;
+	bottom: 20px;
+	left: 50%;
+	transform: translateX(-50%);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+	button {
+		width: 48px;
+		height: 48px;
+		border-radius: 50%;
+		background-color: crimson;
+		color: white;
+		padding: 8px;
+	}
+}

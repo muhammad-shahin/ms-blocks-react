@@ -1,6 +1,6 @@
 // save.js
 import { useBlockProps } from "@wordpress/block-editor";
-
+import "./editor.scss";
 export default function save({ attributes }) {
 	const { sliderInfo } = attributes;
 

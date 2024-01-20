@@ -28,6 +28,18 @@ export default function Edit({ attributes, setAttributes }) {
 	const handleSlideChange = (slideNumber) => {
 		setCurrentSlide(slideNumber);
 	};
+	const demoSlides = [0, 1, 2, 3];
+	// previous next slider control
+	const slideNext = (slideNumber) => {
+		if (slideNumber < demoSlides.length - 1) {
+			setCurrentSlide(slideNumber + 1);
+		}
+	};
+	const slidePrev = (slideNumber) => {
+		if (slideNumber !== 0) {
+			setCurrentSlide(slideNumber - 1);
+		}
+	};
 	return (
 		<Fragment>
 			<InspectorControls>
@@ -75,52 +87,30 @@ export default function Edit({ attributes, setAttributes }) {
 					/>
 				</PanelBody>
 			</InspectorControls>
-			<div
-				className="slider-container"
-				style={{
-					height: `${sliderInfo?.height}px`,
-					borderRadius: `${sliderInfo?.borderRadius}px`,
-				}}
-			>
+			<div className="slider-container">
 				<div
-					className="slider-wrapper"
-					style={{ borderRadius: `${sliderInfo?.borderRadius}px` }}
+					style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+					className="slider"
 				>
-					<div
-						className="slider-content"
-						style={{
-							transform: `translateX(-${currentSlide * 100}%)`,
-						}}
-					>
-						<div className="slide">
-							<img src="https://i.ibb.co/4S1Pcj1/team-member-1.jpg" />
-							{/* overlay effect on image */}
-							<div
-								className="image-overlay"
-								style={{
-									opacity: `${sliderInfo?.overlayIntensity}`,
-									backgroundColor: `${sliderInfo?.overlayColor}`,
-								}}
-							></div>
+					{/* slides */}
+					{demoSlides.map((slide, index) => (
+						<div key={"Slide" + index} className="slide">
+							<img
+								src={`https://source.unsplash.com/random/?productivity,city,${slide}`}
+								class="img-fluid rounded-top"
+								alt=""
+							/>
 						</div>
-						<div className="slide">
-							<img src="https://i.ibb.co/sFnNv0t/team-member-2.jpg" />
-						</div>
-					</div>
+					))}
 				</div>
-				{/* slider button */}
-				<div className="slider-button-container">
-					<button
-						className="slider-button"
-						onClick={() => handleSlideChange(0)}
-					>
-						1
+				{/* slider buttons */}
+				<div className="slider-buttons-container">
+					<button>
+						<img src="https://i.ibb.co/KK9fbn2/prev.png" alt="" />
 					</button>
-					<button
-						className="slider-button"
-						onClick={() => handleSlideChange(1)}
-					>
-						2
+
+					<button>
+						<img src="https://i.ibb.co/rMkqLVp/next.pngs" alt="" />
 					</button>
 				</div>
 			</div>
