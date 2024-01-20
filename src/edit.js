@@ -3,8 +3,15 @@ import {
 	useBlockProps,
 	InspectorControls,
 	RichText,
+	MediaUpload,
+	MediaUploadCheck,
 } from "@wordpress/block-editor";
-import { PanelBody, TextControl, ColorPicker } from "@wordpress/components";
+import {
+	PanelBody,
+	TextControl,
+	ColorPicker,
+	Button,
+} from "@wordpress/components";
 import "./editor.scss";
 import { useState, Fragment, useEffect } from "@wordpress/element";
 
@@ -30,16 +37,28 @@ export default function Edit({ attributes, setAttributes }) {
 	};
 	const demoSlides = [0, 1, 2, 3];
 	// previous next slider control
-	const slideNext = (slideNumber) => {
-		if (slideNumber < demoSlides.length - 1) {
-			setCurrentSlide(slideNumber + 1);
+	const slideNext = () => {
+		if (currentSlide < demoSlides.length - 1) {
+			setCurrentSlide(currentSlide + 1);
 		}
 	};
-	const slidePrev = (slideNumber) => {
-		if (slideNumber !== 0) {
-			setCurrentSlide(slideNumber - 1);
+	const slidePrev = () => {
+		if (currentSlide !== 0) {
+			setCurrentSlide(currentSlide - 1);
 		}
 	};
+
+	const handleImageSelection = (images) => {
+		// Handle the selected images, e.g., store them in sliderInfo
+		setAttributes({
+			sliderInfo: {
+				...sliderInfo,
+				images: [...sliderInfo?.images, ...images],
+			},
+		});
+		console.log("New added images :", images);
+	};
+	console.log("all images :", sliderInfo?.images);
 	return (
 		<Fragment>
 			<InspectorControls>
@@ -47,6 +66,20 @@ export default function Edit({ attributes, setAttributes }) {
 					title={__("Slider Settings", "ms-blocks")}
 					initialOpen={true}
 				>
+					{/* Image selection button */}
+					<MediaUploadCheck>
+						<MediaUpload
+							onSelect={(images) => handleImageSelection(images)}
+							allowedTypes={["image"]}
+							multiple={true} // Allow multiple images
+							value={sliderInfo?.images.map((img) => img.id)}
+							render={({ open }) => (
+								<Button variant="secondary" onClick={open}>
+									Select Images
+								</Button>
+							)}
+						/>
+					</MediaUploadCheck>
 					<TextControl
 						label={__("Slider Height (px)", "ms-blocks")}
 						placeholder="Change Slider Height"
@@ -93,23 +126,29 @@ export default function Edit({ attributes, setAttributes }) {
 					className="slider"
 				>
 					{/* slides */}
-					{demoSlides.map((slide, index) => (
-						<div key={"Slide" + index} className="slide">
-							<img
-								src={`https://source.unsplash.com/random/?productivity,city,${slide}`}
-								class="img-fluid rounded-top"
-								alt=""
-							/>
-						</div>
-					))}
+					{sliderInfo?.images?.length > 0
+						? sliderInfo?.images?.map((slideImage, index) => (
+								<div key={"Slide" + index} className="slide">
+									<img src={slideImage?.url} />
+									<p>Slide {index + 1}</p>
+								</div>
+						  ))
+						: demoSlides.map((slide, index) => (
+								<div key={"Slide" + index} className="slide">
+									<img
+										src={`https://source.unsplash.com/random/?productivity,city,${slide}`}
+									/>
+									<p>Sample Slider {slide + 1}</p>
+								</div>
+						  ))}
 				</div>
 				{/* slider buttons */}
 				<div className="slider-buttons-container">
-					<button>
+					<button onClick={slidePrev}>
 						<img src="https://i.ibb.co/KK9fbn2/prev.png" alt="" />
 					</button>
 
-					<button>
+					<button onClick={slideNext}>
 						<img src="https://i.ibb.co/rMkqLVp/next.pngs" alt="" />
 					</button>
 				</div>

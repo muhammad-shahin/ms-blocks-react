@@ -15,10 +15,12 @@
 		"sliderInfo": {
 			"type": "object",
 			"default": {
-				"height": 500,
+				"height": 600,
 				"borderRadius": 8,
 				"overlayIntensity": 0.0,
-				"overlayColor": "#000"
+				"overlayColor": "#000",
+				"images": [],
+				"currentSlide": 0
 			}
 		}
 	},

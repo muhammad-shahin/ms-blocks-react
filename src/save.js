@@ -1,46 +1,45 @@
-// save.js
 import { useBlockProps } from "@wordpress/block-editor";
-import "./editor.scss";
-export default function save({ attributes }) {
-	const { sliderInfo } = attributes;
+
+export default function Save({ attributes }) {
+	const { sliderInfo, setAttributes } = attributes;
+
+	const demoSlides = [0, 1, 2, 3];
 
 	return (
-		<div {...useBlockProps.save()} data-current-slide="0">
-			<div
-				className="slider-container"
-				style={{
-					height: `${sliderInfo?.height}px`,
-					borderRadius: `${sliderInfo?.borderRadius}px`,
-				}}
-			>
-				<div
-					className="slider-wrapper"
-					style={{ borderRadius: `${sliderInfo?.borderRadius}px` }}
-				>
-					<div className="slider-content">
-						<div className="slide">
-							<img src="https://i.ibb.co/4S1Pcj1/team-member-1.jpg" />
-							{/* overlay effect on image */}
-							<div
-								className="image-overlay"
-								style={{
-									opacity: `${sliderInfo?.overlayIntensity}`,
-									backgroundColor: `${sliderInfo?.overlayColor}`,
-								}}
-							></div>
-						</div>
-						<div className="slide">
-							<img src="https://i.ibb.co/sFnNv0t/team-member-2.jpg" />
-						</div>
-					</div>
+		<div {...useBlockProps.save()}>
+			<div className="slider-container">
+				<div className="slider">
+					{/* Slides */}
+					{sliderInfo?.images?.length > 0
+						? sliderInfo?.images?.map((slideImage, index) => (
+								<div
+									key={"Slide" + index}
+									className="slide"
+									data-slide-index={index}
+								>
+									<img
+										style={{ height: `${sliderInfo?.height}px` }}
+										src={slideImage?.url}
+									/>
+									<p>Slide {index + 1}</p>
+								</div>
+						  ))
+						: demoSlides.map((slide, index) => (
+								<div key={"Slide" + index} className="slide">
+									<img
+										src={`https://source.unsplash.com/random/?productivity,city,${slide}`}
+									/>
+									<p>Sample Slider {slide + 1}</p>
+								</div>
+						  ))}
 				</div>
-				{/* slider button */}
-				<div className="slider-button-container">
-					<button className="slider-button" data-slide-index="0">
-						1
+				{/* Slider buttons */}
+				<div className="slider-buttons-container">
+					<button className="prev-btn">
+						<img src="https://i.ibb.co/KK9fbn2/prev.png" alt="" />
 					</button>
-					<button className="slider-button" data-slide-index="1">
-						2
+					<button className="next-btn">
+						<img src="https://i.ibb.co/rMkqLVp/next.pngs" alt="" />
 					</button>
 				</div>
 			</div>

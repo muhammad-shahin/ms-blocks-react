@@ -28,23 +28,27 @@ document.addEventListener("DOMContentLoaded", function () {
 	const block = document.querySelector(".wp-block-create-block-ms-blocks");
 
 	if (block) {
-		const sliderContent = block.querySelector(".slider-content");
-		const sliderButtons = block.querySelectorAll(".slider-button");
+		const sliderContent = block.querySelector(".slider");
+		const prevBtn = block.querySelector(".prev-btn");
+		const nextBtn = block.querySelector(".next-btn");
+		const totalSlides = block.querySelectorAll(".slide");
+		let currentSlide = 0;
 
-		sliderButtons.forEach((button, index) => {
-			button.addEventListener("click", function () {
-				const slideIndex = parseInt(
-					button.getAttribute("data-slide-index"),
-					10,
-				);
-				const translateValue = `translateX(-${slideIndex * 100}%)`;
+		// previous next slider control
+		const slidePrev = () => {
+			if (currentSlide > 0) {
+				currentSlide = currentSlide - 1;
+				sliderContent.style.transform = `translateX(-${currentSlide * 100}%)`;
+			}
+		};
+		const slideNext = () => {
+			if (currentSlide < totalSlides.length - 1) {
+				currentSlide = currentSlide + 1;
+				sliderContent.style.transform = `translateX(-${currentSlide * 100}%)`;
+			}
+		};
 
-				// Set the 'data-current-slide' attribute to the clicked button index
-				block.setAttribute("data-current-slide", slideIndex);
-
-				// Update the slider content's transform property
-				sliderContent.style.transform = translateValue;
-			});
-		});
+		prevBtn.addEventListener("click", slidePrev);
+		nextBtn.addEventListener("click", slideNext);
 	}
 });
