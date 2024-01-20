@@ -3,7 +3,7 @@
 	"apiVersion": 3,
 	"name": "create-block/ms-blocks",
 	"version": "0.1.0",
-	"title": "Ms Blocks",
+	"title": "MS Blocks",
 	"category": "widgets",
 	"description": "Example block scaffolded with Create Block tool.",
 	"example": {},
@@ -17,7 +17,7 @@
 			"default": {
 				"height": 500,
 				"borderRadius": 8,
-				"overlayIntensity": 0.00,
+				"overlayIntensity": 0.0,
 				"overlayColor": "#000"
 			}
 		}

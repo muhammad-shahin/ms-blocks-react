@@ -1,1 +1,0 @@
-{"version":3,"file":"./style-index.css","mappings":";;;AAAA;EACC;EACA;AACD;;AAEA;EACC;AACD,C","sources":["webpack://ms-blocks/./src/style.scss"],"sourcesContent":[".wp-block-create-block-ms-blocks {\n\tbackground-color: rgb(0, 164, 239);\n\tpadding: 10px;\n}\n\n.text-color {\n\tcolor: white;\n}\n"],"names":[],"sourceRoot":""}

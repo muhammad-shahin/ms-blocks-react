@@ -21,5 +21,30 @@
  */
 
 /* eslint-disable no-console */
-console.log( 'Hello World! (from create-block-ms-blocks block)' );
+console.log("Hello World! (from create-block-ms-blocks block)");
 /* eslint-enable no-console */
+// view.js
+document.addEventListener("DOMContentLoaded", function () {
+	const block = document.querySelector(".wp-block-create-block-ms-blocks");
+
+	if (block) {
+		const sliderContent = block.querySelector(".slider-content");
+		const sliderButtons = block.querySelectorAll(".slider-button");
+
+		sliderButtons.forEach((button, index) => {
+			button.addEventListener("click", function () {
+				const slideIndex = parseInt(
+					button.getAttribute("data-slide-index"),
+					10,
+				);
+				const translateValue = `translateX(-${slideIndex * 100}%)`;
+
+				// Set the 'data-current-slide' attribute to the clicked button index
+				block.setAttribute("data-current-slide", slideIndex);
+
+				// Update the slider content's transform property
+				sliderContent.style.transform = translateValue;
+			});
+		});
+	}
+});
